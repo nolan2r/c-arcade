@@ -54,6 +54,8 @@ int main(){
 */
 
 #include <cmath>
+/*
+//Partie : 1 
 class Circle {
     //Position of the center
     public : 
@@ -127,4 +129,127 @@ int main() {
     std::cout << "Coordinates of the top left corner: (" << r.x << ", " << r.y << ")" << std::endl;
     return 0;
 }
+*/
 
+// Partie 2 : 
+
+#include <iostream>
+
+using namespace std;
+
+
+class Fraction {
+    private :
+    double num;
+    double denum;
+
+    public :
+    Fraction(){
+        num = 1;
+        denum = 1;
+    }
+    
+    Fraction (double n, double d){
+        setnum(n) ;
+        setdenum(d) ;
+    }
+    void setnum(double n){
+        num=n;
+    }
+
+    void setdenum(double d){
+        if (d!=0){
+            denum = d;
+        }
+    }
+
+    double getnum(){
+        return num;
+    }
+    double getdenum(){
+        return denum;
+    }
+    void afficher(){
+    std::cout<<num<<"/"<<denum<<std::endl;
+    }
+
+    Fraction addition(Fraction f){
+        Fraction S;
+        S.setnum((num*f.getdenum())+(denum*f.getnum()));
+        S.setdenum(denum*f.getdenum());
+        return S;
+    }
+
+};
+
+int main()
+{   Fraction f;
+    f.afficher();
+    Fraction f2(1,0);
+    f2.afficher();
+    Fraction f3(15,13);
+    f3.afficher();
+    Fraction f4(25,96);
+    Fraction f5;
+    f5 = f3.addition(f4);
+    f5.afficher();
+    
+    /*
+    /* Test constructors 
+    Fraction f0;
+    if (f0.getNumerateur() == 1 && f0.getDenominateur() == 1) {
+        cout << "[OK] Default constructor works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Default constructor doesn't work" << endl;
+    }
+
+    Fraction f1(1, 2);
+    if (f1.getNumerateur() == 1 && f1.getDenominateur() == 2) {
+        cout << "[OK] Constructor with parameters works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Constructor with parameters doesn't work" << endl;
+    }
+
+    Fraction f2(3, 4);
+
+    /* Test add 
+    Fraction f3 = f1.add(f2);
+
+    if (f3.getNumerateur() == 10 && f3.getDenominateur() == 8) {
+        cout << "[OK] Add method works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Add method doesn't work" << endl;
+    }
+
+    /* Test minus 
+    f3 = f1.minus(f2);
+    if (f3.getNumerateur() == -2 && f3.getDenominateur() == 8) {
+        cout << "[OK] Minus method works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Minus method doesn't work" << endl;
+    }
+
+    /* Test multiply 
+    f3 = f1.multiply(f2);
+    if (f3.getNumerateur() == 3 && f3.getDenominateur() == 8) {
+        cout << "[OK] Multiply method works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Multiply method doesn't work" << endl;
+    }
+
+    /* Test divide 
+    f3 = f1.divide(f2);
+    if (f3.getNumerateur() == 4 && f3.getDenominateur() == 6) {
+        cout << "[OK] Divide method works" << endl;
+    }
+    else {
+        cout << "[FAILURE] Divide method doesn't work" << endl;
+    }
+    return 0;*/
+
+}
