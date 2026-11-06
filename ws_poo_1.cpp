@@ -130,7 +130,7 @@ int main() {
     return 0;
 }
 */
-
+/*
 // Partie 2 : 
 
 #include <iostream>
@@ -250,6 +250,56 @@ int main()
     else {
         cout << "[FAILURE] Divide method doesn't work" << endl;
     }
-    return 0;*/
+    return 0;
 
 }
+*/
+
+// Partie 3 : 
+#include<iostream>
+#include<string>
+
+class Creature {
+    private :
+    int pv;
+    int pa;
+    int niv;
+
+    public : 
+    Creature(){
+        pv = pv;
+        pa = pa;
+        niv = niv;
+    }
+
+    Creature(int pv, int pa, int niv){
+        setpv(pv);
+        setpa(pa);
+        setniv(niv);
+    }
+
+    void setpv(int a){
+        pv=a;
+    }
+    void setpa(int b){
+        pa=b;
+    }
+    void setniv(int c){
+        niv=c;
+    }
+
+    int getpv(){
+        return pv;
+    }
+    int getpa(){
+        return pa;
+    }
+    int getniv(){
+        return niv;
+    }
+
+    void affiche(){
+        std::cout<<"la créature a : "<<pv<<"pv"<<pa<<"pa"<<niv<<"niveau"<<std::endl;
+    }
+
+};
