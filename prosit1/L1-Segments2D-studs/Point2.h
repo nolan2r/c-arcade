@@ -6,7 +6,16 @@
 
 class Point2 {
 private:
-  /*A COMPLETER*/
+  float x,y;
 public:
-  /*A COMPLETER*/
+  Point2();
+  Point2(float px, float py);
+
+  float getX() const;
+  float getY() const;
+
+  void setX(float px);
+  void setY(float py);
+
+  
 };
