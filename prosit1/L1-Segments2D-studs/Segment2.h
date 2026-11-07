@@ -14,9 +14,13 @@ enum IntersectionStatus {
 
 class Segment2 {
 private:
-  /*A COMPLETER*/
+  Point2 origin;
+  Vector2 direction;
 public:
-  /*A COMPLETER*/
+  Segment2(Point2 s_origin, Vector2 s_direction);
+
+  Point2 getOrigin() const;
+  Vector2 getDirection() const;
   
-  IntersectionStatus Segment2::intersect(Segment2 r, Point2 &p);
+  IntersectionStatus intersect(Segment2 r, Point2 &p);
 };

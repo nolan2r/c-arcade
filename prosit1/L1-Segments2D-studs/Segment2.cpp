@@ -1,8 +1,22 @@
 #include "Segment2.h"
 
+Segment2::Segment2(Point2 s_origin, Vector2 s_direction){
+  origin = s_origin;
+  direction = s_direction;
+
+}
+
+Segment2::getOrigin() const{
+  return origin;
+}
+
+Segment2::getDirection() const{
+  return direction;
+}
+
 IntersectionStatus Segment2::intersect(Segment2 r, Point2 &p) {
-  Point2 oa = this->getOrigin(), ob = r.getOrigin();
-  Vector2 da = this->getDirection(), db = r.getDirection(), dc = ob.sub(oa);
+  Point2 oa = this->getOrigin(), ob = r.getOrigin() ;
+  Vector2 da = this->getDirection(), db = r.getDirection() , dc = ob.sub(oa);
 
   IntersectionStatus status;
   float det = da.cross(db);
@@ -19,7 +33,7 @@ IntersectionStatus Segment2::intersect(Segment2 r, Point2 &p) {
     } else
       status = NON_INTERSECTING;
   } else {
-    float st = dc.cross(this->getDirection());
+    float st = dc.cross(this->getDirection() const);
 
     if (det == 0.0 && st == 0.0) { // check for collinearity
       float pj, d1, d2;
