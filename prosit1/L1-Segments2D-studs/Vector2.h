@@ -7,7 +7,19 @@
 
 class Vector2 {
 private:
-  /*A COMPLETER*/
+  float x,y;
 public:
-  /*A COMPLETER*/
+  float getX() const;
+  float getY() const;
+
+  Vector2();
+  Vector2(float px, float py);
+
+  float norm() const;
+  float dot(const Vector2 r) const;
+  Vector2 dot(float u) const;
+  float cross(const Vector2 r) const;
+  Vector2 negate() const;
+
 };
+

@@ -14,17 +14,28 @@ Vector2::Vector2(){
 }
 
 Vector2::Vector2(float px, float py){
-        setx(px);
-        sety(py);
+        x=px;
+        y=py;
 }
 
+float Vector2::norm() const {
+    return sqrt(x*x+y*y);
+}
 
-void Vector2::setx(float px){
-        px=x;
-    }
+float Vector2::dot(const Vector2 r) const {
+    return x * r.getX() + y * r.getY();
 
-void Vector2::sety(float py){
-        py=y;
-    }
+}
 
-    
+Vector2 Vector2::dot(float u) const {
+    return Vector2(u*x,u*y);
+}
+
+float Vector2::cross(const Vector2 r) const {
+    return (x * r.getY()) - (y * r.getX());
+
+}
+
+Vector2 Vector2::negate() const {
+    return Vector2(-x,-y);
+}
