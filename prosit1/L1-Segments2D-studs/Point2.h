@@ -17,5 +17,11 @@ public:
   void setX(float px);
   void setY(float py);
 
+  void print() const;
+  
+  Vector2 sub(Point2 r) const;
+  Point2 add(Vector2 r) const;
+
+
   
 };
