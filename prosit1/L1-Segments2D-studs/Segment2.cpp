@@ -6,11 +6,11 @@ Segment2::Segment2(Point2 s_origin, Vector2 s_direction){
 
 }
 
-Segment2::getOrigin() const{
+Point2 Segment2::getOrigin() const{
   return origin;
 }
 
-Segment2::getDirection() const{
+Vector2 Segment2::getDirection() const{
   return direction;
 }
 
@@ -33,7 +33,7 @@ IntersectionStatus Segment2::intersect(Segment2 r, Point2 &p) {
     } else
       status = NON_INTERSECTING;
   } else {
-    float st = dc.cross(this->getDirection() const);
+    float st = dc.cross(this->getDirection());
 
     if (det == 0.0 && st == 0.0) { // check for collinearity
       float pj, d1, d2;

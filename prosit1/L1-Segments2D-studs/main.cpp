@@ -20,12 +20,19 @@ void test() {
   assert((status == NON_INTERSECTING) && "s1 and s4 should not be intersecting and aren't parallel, nor collinear.");
   status = s3.intersect(s4, o10);
   assert((status == PARALLEL_NON_INTERSECTING) && "s1 and s4 should not be intersecting and are parallel.");
+  
+  //test comparaison avec le code C
+  Point2 pa(0, 0), pb(1, 2), pr(0, 0);
+  Vector2 va(1, 1), vb(2, 4);
+  Segment2 sa(pa, va), sb(pb, vb);
+
+  status = sa.intersect(sb, pr);
+  std::cout << status << " " << pr.getX() << " " << pr.getY() << std::endl;
 
   std::cout << "Test completed successfully !" << std::endl;
 }
 
 int main() {
   test();
-
   return EXIT_SUCCESS;
 }

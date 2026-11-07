@@ -27,7 +27,7 @@ void Point2::setY(float py) {
     y=py;
 }
 void Point2::print() const {
-    std::cout<<"("<<x<<","<<y<")"<<std::endl;
+    std::cout<<"("<<x<<","<<y<<")"<<std::endl;
 }
 
 Vector2 Point2::sub(Point2 r) const {

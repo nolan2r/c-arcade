@@ -39,3 +39,4 @@ float Vector2::cross(const Vector2 r) const {
 Vector2 Vector2::negate() const {
     return Vector2(-x,-y);
 }
+
